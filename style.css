@@ -1,0 +1,178 @@
+
+/* On donne des noms aux couleurs pour les réutiliser */
+:root {
+    --wa-dark: #075e54;   
+    --wa-green: #25d366; 
+    --wa-light: #dcf8c6;  
+    --bg: #f0f2f5;        
+    --border: #d1d7db;    
+}
+
+body { 
+    margin: 0; 
+    font-family: sans-serif; 
+    background: var(--bg); 
+    height: 100vh; 
+}
+
+/* écran de connexion */
+.overlay {
+    position: fixed; 
+    inset: 0; 
+    background: var(--wa-dark);
+    display: flex; 
+    align-items: center;    
+    justify-content: center;
+    z-index: 100;           
+}
+
+/* partie centrale de l'écran de connexion */
+.login-card { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 10px; 
+    text-align: center; 
+    width: 300px; 
+}
+.login-card input { 
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid var(--bg); 
+    border-radius: 5px; 
+}
+.login-card button { 
+    width: 100%; 
+    padding: 10px; 
+    background: var(--wa-green); 
+    border: none; 
+    color: white; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.app-container { 
+    display: grid; 
+    grid-template-columns: 300px 1fr;
+    height: 100vh; 
+}
+
+/* barre de gauche contacts */
+.sidebar { 
+    background: white; 
+    border-right: 1px solid var(--border); 
+    display: flex; 
+    flex-direction: column; 
+}
+.sidebar-header { 
+    padding: 20px; 
+    background: var(--border); 
+    border-bottom: 1px solid var(--border); 
+}
+.user-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    flex-grow: 1;      
+    overflow-y: auto; 
+}
+.user-item { 
+    padding: 15px; 
+    border-bottom: 1px solid #f6f6f6; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+}
+.user-item:hover { 
+    background: #f5f5f5; 
+}
+
+.status-online { 
+    width: 10px; 
+    height: 10px; 
+    background: var(--wa-green); 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
+
+/* zone de chat */
+.chat-panel { 
+    display: flex; 
+    flex-direction: column; 
+    background: #e5ddd5; 
+}
+.chat-header { 
+    padding: 10px; 
+    background: var(--bg); 
+    display: flex; 
+    gap: 10px; 
+}
+.messages-container { 
+    flex-grow: 1; 
+    padding: 20px; 
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+/* bulles de messages */
+.bubble { 
+    max-width: 70%; 
+    padding: 10px; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    position: relative; 
+}
+.received { 
+    background: white; 
+    align-self: flex-start; 
+}
+.sent { 
+    background: var(--wa-light); 
+    align-self: flex-end;  
+}
+.msg-author { 
+    font-weight: bold; 
+    display: block; 
+    font-size: 11px; 
+    color: var(--wa-dark); 
+}
+
+/* barre d'entrée*/
+.composer { 
+    padding: 15px; 
+    background: var(--bg); 
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; 
+}
+.composer-inputs, .composer-main { 
+    display: flex; 
+    gap: 10px; 
+}
+.composer input { 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    flex-grow: 1; 
+}
+#sendMessage { 
+    background: var(--wa-green); 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+
+/*pour passer d'un écran à l'autre */
+.hidden { 
+    display: none !important; 
+}
+.tablinks.active { 
+    background: white; 
+    font-weight: bold; 
+    border: 1px solid var(--border); 
+}

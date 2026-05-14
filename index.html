@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp de Jules</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginSection" class="overlay">
+        <div class="login-card">
+            <h1>WhatsApp de Jules</h1>
+            <input type="text" id="userName" placeholder="Pseudo">
+            <input type="email" id="userEmail" placeholder="Email">
+            <button id="setUsername">Se connecter</button>
+        </div>
+    </div>
+
+    <div id="app" class="app-container hidden">
+        <aside class="sidebar">
+            <div class="sidebar-header"><h2>Contacts</h2></div>  
+            <ul id="allUsers" class="user-list"></ul>    
+            <div class="sidebar-footer" style="padding:10px;">Moi: <b id="connectedAs"></b></div>
+        </aside>
+
+        <main class="chat-panel">
+            <header class="chat-header">
+                <button class="tablinks active" id="btnInbox">Reçus</button>
+                <button class="tablinks" id="btnSent">Envoyés</button>
+            </header>
+            <div id="Inbox" class="messages-container tabcontent"></div>
+            <div id="Sent" class="messages-container tabcontent" style="display:none;"></div>
+            <footer class="composer">
+                <div class="composer-inputs">
+                    <input type="text" id="recipient" placeholder="destinataire">
+                    <input type="text" id="subject" placeholder="sujet">
+                </div>
+                <div class="composer-main">
+                    <input type="text" id="message" placeholder="message">
+                    <button id="sendMessage">Envoyer</button>
+                </div>
+            </footer>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
